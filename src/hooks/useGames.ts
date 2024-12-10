@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Games } from "../types/types";
 const GameApiClient = axios.create({
-    baseURL: "https://rawg.io",
+    baseURL: "https://api.rawg.io/api/",
+    params: {
+        key: "855ce31cff2547b0a26e130700bcacf3",
+    },
 });
 
 interface FetchResponse {
     count: number;
     results: Games;
 }
-function UseGames(endpoint: string) {
+function useGames(endpoint: string) {
     const [games, setGames] = useState<Games>([]);
     const [error, setError] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -35,4 +38,4 @@ function UseGames(endpoint: string) {
     return { games, error, isLoading, setGames, setError, setIsLoading };
 }
 
-export default UseGames;
+export default useGames;

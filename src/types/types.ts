@@ -1,8 +1,14 @@
 export type Game = {
-    game: string;
-    metacrtic: string;
-    platorm: string;
-    genre: string;
+    id: number;
+    slug: string;
+    name: string;
+    tba: boolean;
+    rating_count: number;
+    playtime: number;
+    released: string;
+    metacritic: number;
+    rating: number;
+    background_image: string;
 };
 
 export type Games = Game[];
