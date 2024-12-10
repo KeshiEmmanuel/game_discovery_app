@@ -4,7 +4,11 @@ interface Props {
     maxWidth: string;
 }
 function MaxContainer({ children, maxWidth }: Props) {
-    return <Container maxWidth={maxWidth}>{children}</Container>;
+    return (
+        <Container fontFamily={"Inter"} maxWidth={maxWidth}>
+            {children}
+        </Container>
+    );
 }
 
 export default MaxContainer;

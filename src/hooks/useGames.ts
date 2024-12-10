@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { CanceledError } from "axios";
 import { Games } from "../types/types";
 const GameApiClient = axios.create({
     baseURL: "https://api.rawg.io/api/",
@@ -28,12 +28,13 @@ function useGames(endpoint: string) {
                 setIsLoading(false);
             })
             .catch((error) => {
+                if (error instanceof CanceledError) return;
                 setError(error.message);
                 setIsLoading(false);
             });
 
         return () => controller.abort();
-    });
+    }, []);
 
     return { games, error, isLoading, setGames, setError, setIsLoading };
 }
