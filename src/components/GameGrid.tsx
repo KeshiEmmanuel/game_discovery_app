@@ -10,8 +10,8 @@ const GameGrid = () => {
                 <Spinner
                     thickness="4px"
                     speed="0.65s"
-                    emptyColor="gray.200"
-                    colorScheme="blue.500"
+                    emptyColor="gray"
+                    colorScheme="blue"
                     size={"xl"}
                 />
             )}
@@ -22,7 +22,6 @@ const GameGrid = () => {
                     sm: 1,
                     md: 2,
                     lg: 3,
-                    xl: 4,
                 }}
                 spacing={10}
             >
