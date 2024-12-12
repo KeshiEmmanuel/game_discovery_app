@@ -9,7 +9,7 @@ interface Genre {
 
 interface FetchReponse {
     count: number;
-    genres: Genre[];
+    results: Genre[];
 }
 
 const useGenre = (endpoint: string) => {
@@ -23,7 +23,7 @@ const useGenre = (endpoint: string) => {
             signal: controller.signal,
         })
             .then(({ data }) => {
-                setGenres(data.genres);
+                setGenres(data.results);
                 setIsLoading(false);
             })
             .catch((error) => {
