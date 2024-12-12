@@ -1,15 +1,22 @@
-import { Text, VStack, ColorMode } from "@chakra-ui/react";
-import useGenre from "../hooks/useGenre";
+import { Text, VStack, Spinner } from "@chakra-ui/react";
+import useData from "../hooks/useData";
+
+interface Genre {
+    id: number;
+    name: string;
+}
 
 const GenreList = () => {
-    const { genres, isLoading, error } = useGenre("/genres");
+    const { data: genres, isLoading, error } = useData<Genre>("/genres");
     console.log(genres);
 
+    if (error) return null;
     return (
         <VStack alignItems={"start"} paddingTop={"50px"}>
             <ul>
+                {isLoading && <Spinner />}
                 {genres.map((genre) => (
-                    <li>{genre.name}</li>
+                    <li key={genre.id}>{genre.name}</li>
                 ))}
             </ul>
         </VStack>
