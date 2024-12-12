@@ -19,6 +19,7 @@ function useGames(endpoint: string) {
 
     useEffect(() => {
         const controller = new AbortController();
+        setIsLoading(true);
         GameApiClient.get<FetchResponse>(endpoint, {
             signal: controller.signal,
         })
