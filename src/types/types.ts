@@ -16,6 +16,11 @@ export type Game = {
     background_image: string;
     parent_platforms: { platform: Platform }[];
 };
+export interface Genre {
+    id: number;
+    name: string;
+    image_background: string;
+}
 
 export type GameDetails = {
     id: number;
