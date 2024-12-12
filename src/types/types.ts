@@ -21,7 +21,12 @@ export interface Genre {
     name: string;
     image_background: string;
 }
-
+export interface GameQuery {
+    genres: Genre | null;
+    platforms: Platform | null;
+    seachString: string;
+    sortOrder: string;
+}
 export type GameDetails = {
     id: number;
     slug: string;
