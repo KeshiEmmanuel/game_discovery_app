@@ -8,7 +8,7 @@ export type Game = {
     slug: string;
     name: string;
     tba: boolean;
-    rating_count: number;
+    rating_top: number;
     playtime: number;
     released: string;
     metacritic: number;
@@ -22,7 +22,7 @@ export interface Genre {
     image_background: string;
 }
 export interface GameQuery {
-    genres: Genre | null;
+    genre: Genre | null;
     platforms: Platform | null;
     seachString: string;
     sortOrder: string;

@@ -1,12 +1,4 @@
-import {
-    Image,
-    VStack,
-    Spinner,
-    ListItem,
-    List,
-    HStack,
-    Button,
-} from "@chakra-ui/react";
+import { Image, VStack, Spinner, List, HStack, Button } from "@chakra-ui/react";
 import useData from "../hooks/useData";
 import { Genre } from "../types/types";
 import { getCroppedImageUrl } from "../utils/CroppedImage";
@@ -40,7 +32,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                                     ? "bold"
                                     : "light"
                             }
-                            outline={"none"}
+                            border={"none"}
                             fontSize={"18px"}
                             key={genre.id}
                             onClick={() => onSelectGenre(genre)}

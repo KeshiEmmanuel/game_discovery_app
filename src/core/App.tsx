@@ -4,10 +4,11 @@ import Navbar from "../components/Navbar";
 import MaxContainer from "../components/ui/MaxContainer";
 import GameGrid from "../components/GameGrid";
 import GenreList from "../components/GenreList";
-import { Genre } from "../types/types";
+import { GameQuery, Genre } from "../types/types";
+import PlatformSelector from "../components/PlatformSelector";
 
 function App() {
-    const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+    const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
     return (
         <MaxContainer maxWidth="1200px">
             <Grid
@@ -22,13 +23,16 @@ function App() {
                 <Show above="lg">
                     <GridItem area={"aside"}>
                         <GenreList
-                            selectedGenre={selectedGenre}
-                            onSelectGenre={(genre) => setSelectedGenre(genre)}
+                            selectedGenre={gameQuery.genre}
+                            onSelectGenre={(genre) =>
+                                setGameQuery({ ...gameQuery, genre })
+                            }
                         />
                     </GridItem>
                 </Show>
                 <GridItem area={"main"}>
-                    <GameGrid selectedGenre={selectedGenre} />
+                    <PlatformSelector />
+                    <GameGrid gameQuery={gameQuery} />
                 </GridItem>
             </Grid>
         </MaxContainer>
