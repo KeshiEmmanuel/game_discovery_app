@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import MaxContainer from "../components/ui/MaxContainer";
 import GameGrid from "../components/GameGrid";
 import GenreList from "../components/GenreList";
-import { GameQuery, Genre } from "../types/types";
+import { GameQuery } from "../types/types";
 import PlatformSelector from "../components/PlatformSelector";
 
 function App() {
@@ -18,7 +18,11 @@ function App() {
                 }}
             >
                 <GridItem area={"nav"}>
-                    <Navbar />
+                    <Navbar
+                        onSearch={(searchString) =>
+                            setGameQuery({ ...gameQuery, searchString })
+                        }
+                    />
                 </GridItem>
                 <Show above="lg">
                     <GridItem area={"aside"}>
@@ -31,7 +35,12 @@ function App() {
                     </GridItem>
                 </Show>
                 <GridItem area={"main"}>
-                    <PlatformSelector />
+                    <PlatformSelector
+                        selectedPlatform={gameQuery.platform}
+                        onSelectPlatform={(platform) =>
+                            setGameQuery({ ...gameQuery, platform })
+                        }
+                    />
                     <GameGrid gameQuery={gameQuery} />
                 </GridItem>
             </Grid>

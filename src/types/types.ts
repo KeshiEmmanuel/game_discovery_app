@@ -23,8 +23,8 @@ export interface Genre {
 }
 export interface GameQuery {
     genre: Genre | null;
-    platforms: Platform | null;
-    seachString: string;
+    platform: Platform | null;
+    searchString: string;
     sortOrder: string;
 }
 export type GameDetails = {
