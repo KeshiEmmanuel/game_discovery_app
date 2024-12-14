@@ -9,6 +9,7 @@ const useGames = (GameQuery: GameQuery) =>
                 genres: GameQuery.genre?.id,
                 platforms: GameQuery.platform?.id,
                 search: GameQuery.searchString,
+                ordering: GameQuery.sortOrder,
             },
         },
         [GameQuery]
