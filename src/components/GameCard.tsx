@@ -11,7 +11,6 @@ interface Props {
     fontFamily: string;
 }
 export const GameCard = ({ game, fontFamily }: Props) => {
-    console.log(game);
     return (
         <Card>
             <Image

@@ -1,5 +1,5 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FormEvent, useRef } from "react";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
 
 interface Props {
@@ -18,8 +18,9 @@ const SearchBar = ({ onSearch }: Props) => {
             <InputGroup>
                 <InputLeftElement children={<LuSearch />} />
                 <Input
-                    width={"500px"}
+                    width={"700px"}
                     ref={inputRef}
+                    variant={"filled"}
                     placeholder="Search Games"
                 />
             </InputGroup>
