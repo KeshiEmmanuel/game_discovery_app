@@ -18,10 +18,10 @@ const SearchBar = ({ onSearch }: Props) => {
             <InputGroup>
                 <InputLeftElement children={<LuSearch />} />
                 <Input
-                    width={"700px"}
                     ref={inputRef}
+                    borderRadius={"100px"}
                     variant={"filled"}
-                    placeholder="Search Games"
+                    placeholder="Search Games..."
                 />
             </InputGroup>
         </form>
