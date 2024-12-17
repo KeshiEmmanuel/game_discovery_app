@@ -8,7 +8,7 @@ interface Props {
 const Emoji = ({ rating }: Props) => {
     if (rating < 3) return null;
 
-    const emojiMap: { [key: string]: ImageProps } = {
+    const emojiMap: { [key: number]: ImageProps } = {
         3: { src: Meh, alt: "meh", boxSize: "25px" },
         4: { src: ThumbsUp, alt: "thumbs-up", boxSize: "25px" },
         5: { src: Bullseye, alt: "bulls-eye", boxSize: "25px" },

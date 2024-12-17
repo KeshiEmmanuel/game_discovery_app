@@ -14,7 +14,7 @@ export const GameCard = ({ game, fontFamily }: Props) => {
         <Card>
             <Image src={getCroppedImageUrl(game.background_image)} />
             <CardBody>
-                <HStack justifyContent={"space-between"}>
+                <HStack justifyContent={"space-between"} paddingBottom={"5px"}>
                     <PlatformIconList
                         platform={game.parent_platforms.map((p) => p.platform)}
                     />
