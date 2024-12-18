@@ -1,11 +1,4 @@
-import {
-    // Button,
-    // ButtonGroup,
-    // ButtonSpinner,
-    HStack,
-    Icon,
-    Text,
-} from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import { Platform } from "../types/types";
 import {
     FaWindows,
@@ -46,21 +39,5 @@ const PlatformIconList = ({ platform }: Props) => {
         </HStack>
     );
 };
-
-// interface DownloadProps {
-//     isDownloading: boolean;
-// }
-// function DownloadButton({ isDownloading }: DownloadProps) {
-//     return (
-//         <>
-//             <ButtonGroup>
-//                 <Button>
-//                     {isDownloading && <ButtonSpinner />}{" "}
-//                     {isDownloading ? "Downloading" : "Download"}
-//                 </Button>
-//             </ButtonGroup>
-//         </>
-//     );
-// }
 
 export default PlatformIconList;
